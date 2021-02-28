@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\BaseController;
 
-class ArticleController extends Controller
+class ArticleController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.article.index');
+        // 分页
+        $articles = Article::paginate($this->pagesize);
+
+        return view('admin.article.index',compact('articles'));
     }
 
     /**
