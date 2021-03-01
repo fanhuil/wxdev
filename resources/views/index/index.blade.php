@@ -29,9 +29,9 @@
     <div class="fp-tablecell">
         <div class="page1">
             <div class="nav wow zoomIn" data-wow-duration="2s">
-                <h1>PHP</h1>
-                <p>剑气纵横三万里,一剑光寒十九洲</p>
-                <a class="layui-btn layui-btn-normal" style="margin-top: 20px" href="{{route('article.index')}}">Enter Blog</a>
+                <h1>好好学习，天天向上</h1>
+                <p>莫等闲，白了少年头，空悲切。</p>
+                <a class="layui-btn layui-btn-normal" style="margin-top: 20px" href="{{route('index.article.index')}}">Enter Blog</a>
             </div>
             <a class="next wow fadeInUp" data-wow-duration="2s" id="next"></a>
         </div>
@@ -55,21 +55,21 @@
                         <div class="single-news">
                             <div class="news-head">
                                 <img src="index/image/1.jpg">
-                                <a href="#" class="link"><i class="fa fa-link"></i></a>
+                                <a href="{{route('index.article.show',['id'=>$hotArticle[0]->id])}}" class="link"><i class="fa fa-link"></i></a>
                             </div>
                             <div class="news-content">
                                 <h4>
-                                    <a href="#">
-                                        PHP
+                                    <a href="{{route('index.article.show',['id'=>$hotArticle[0]->id])}}">
+                                        {{$hotArticle[0]->title}}
                                     </a>
                                 </h4>
                                 <div class="date">
-                                    2021年2月16日
+                                    {{$hotArticle[0]->updated_at}}
                                 </div>
                                 <p>
-                                    很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
+                                    {{$hotArticle[0]->content}}
                                 </p>
-                                <a href="{{route('article.index')}}" class="btn">
+                                <a href="{{route('index.article.show',['id'=>$hotArticle[0]->id])}}" class="btn">
                                     阅读更多
                                 </a>
                             </div>
@@ -79,21 +79,21 @@
                         <div class="single-news">
                             <div class="news-head">
                                 <img src="index/image/1.jpg">
-                                <a href="#" class="link"><i class="fa fa-link"></i></a>
+                                <a href="{{route('index.article.show',['id'=>$hotArticle[1]->id])}}" class="link"><i class="fa fa-link"></i></a>
                             </div>
                             <div class="news-content">
                                 <h4>
-                                    <a href="#">
-                                        Nginx
+                                    <a href="{{route('index.article.show',['id'=>$hotArticle[1]->id])}}">
+                                        {{$hotArticle[1]->title}}
                                     </a>
                                 </h4>
                                 <div class="date">
-                                    2021年2月17日
+                                    {{$hotArticle[1]->updated_at}}
                                 </div>
                                 <p>
-                                    很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
+                                    {{$hotArticle[1]->content}}
                                 </p>
-                                <a href="{{route('article.index')}}" class="btn">
+                                <a href="{{route('index.article.show',['id'=>$hotArticle[0]->id])}}" class="btn">
                                     阅读更多
                                 </a>
                             </div>
@@ -103,21 +103,21 @@
                         <div class="single-news">
                             <div class="news-head">
                                 <img src="index/image/1.jpg">
-                                <a href="#" class="link"><i class="fa fa-link"></i></a>
+                                <a href="{{route('index.article.show',['id'=>$hotArticle[2]->id])}}" class="link"><i class="fa fa-link"></i></a>
                             </div>
                             <div class="news-content">
                                 <h4>
-                                    <a href="#">
-                                        Mysql
+                                    <a href="{{route('index.article.show',['id'=>$hotArticle[2]->id])}}">
+                                        {{$hotArticle[2]->title}}
                                     </a>
                                 </h4>
                                 <div class="date">
-                                    2021年2月20日
+                                    {{$hotArticle[2]->updated_at}}
                                 </div>
                                 <p>
-                                    很想给你写封信,告诉你这里的天气. 昨夜的那场电影,还有我的心情.
+                                    {{$hotArticle[2]->content}}
                                 </p>
-                                <a href="{{route('article.index')}}" class="btn">
+                                <a href="{{route('index.article.show',['id'=>$hotArticle[2]->id])}}" class="btn">
                                     阅读更多
                                 </a>
                             </div>

@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Index;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 
 class IndexController extends Controller
 {
     //
     public function index()
     {
-        return view('index.index');
+        $hotArticle = Article::where('is_hot',1)->get();
+        return view('index.index',compact('hotArticle'));
     }
 
     # 顺序查找法

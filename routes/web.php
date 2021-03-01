@@ -19,7 +19,7 @@
 Route::get('/','Index\IndexController@index')->name('/');
 
 // 文章列表页
-Route::get('/article','Index\ArticleController@index')->name('article.index');
+Route::get('/article','Index\ArticleController@index')->name('index.article.index');
 
 
 Route::get('/article-show','Index\ArticleController@show')->name('index.article.show');

@@ -21,6 +21,7 @@ class CreateArticleTable extends Migration
             $table->string('seo_keyword')->comment('SEO优化关键词');
             $table->string('seo_description')->comment('SEO优化标题');
             $table->text('content')->comment('文章内容');
+            $table->integer('is_hot')->default(0)->comment('是否推荐上首页');
             $table->timestamps();
         });
     }
