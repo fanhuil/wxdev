@@ -10,10 +10,8 @@ class UserController extends BaseController
     //
     public function index()
     {
-
         // 分页
         $users = User::paginate($this->pagesize);
-
         return view('admin.user.index', compact('users'));
     }
 
@@ -34,12 +32,10 @@ class UserController extends BaseController
                 'truename' => 'required',
                 'password' => 'required|comfirmed'
         ]);
-
     }
-
-    // 测试集成VUE
+    // 测试集成VUE+AXIOS
     public function testAxios(Request $request){
-        $userInfo = User::paginate(10);
+        $userInfo = User::all();
         return json_encode($userInfo);
     }
 }

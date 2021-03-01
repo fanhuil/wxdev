@@ -18,7 +18,6 @@ class ArticleController extends BaseController
     {
         // 分页
         $articles = Article::paginate($this->pagesize);
-
         return view('admin.article.index',compact('articles'));
     }
 

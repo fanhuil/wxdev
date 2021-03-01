@@ -16,6 +16,7 @@ class CreateArticleTable extends Migration
         Schema::create('article', function (Blueprint $table) {
             $table->increments('id')->comment('自增主键');
             $table->string('title')->comment('文章标题');
+            $table->string('author')->comment('文章作者');
             $table->string('seo_title')->comment('SEO优化标题');
             $table->string('seo_keyword')->comment('SEO优化关键词');
             $table->string('seo_description')->comment('SEO优化标题');

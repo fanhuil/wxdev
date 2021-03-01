@@ -22,7 +22,7 @@ Route::get('/','Index\IndexController@index')->name('/');
 Route::get('/article','Index\ArticleController@index')->name('article.index');
 
 
-Route::get('/article-show','Index\ArticleController@show')->name('article.show');
+Route::get('/article-show','Index\ArticleController@show')->name('index.article.show');
 
 // 后台路由
 include base_path('routes/admin/admin.php');
