@@ -39,7 +39,7 @@
     </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l">
             <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
-            <a href="javascript:;" onclick="member_add('添加文章','{{route('admin.user.create')}}','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a></span> <span class="r">共有数据：<strong>88</strong> 条</span>
+            <a href="javascript:;" onclick="member_add('添加文章','{{route('admin.article.create')}}','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a></span> <span class="r">共有数据：<strong>88</strong> 条</span>
     </div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-hover table-bg table-sort">
@@ -48,12 +48,8 @@
                 <th width="25"><input type="checkbox" name="" value=""></th>
                 <th width="80">ID</th>
                 <th width="100">文章标题</th>
-                {{--<th width="40">性别</th>--}}
-                {{--<th width="90">手机</th>--}}
-                {{--<th width="150">邮箱</th>--}}
-                {{--<th width="">地址</th>--}}
-                {{--<th width="130">加入时间</th>--}}
-                {{--<th width="70">状态</th>--}}
+                <th width="40">作者</th>
+                <th width="130">添加时间</th>
                 <th width="100">操作</th>
             </tr>
             </thead>
@@ -64,11 +60,8 @@
                     <td>{{ $item->id }}</td>
                     {{--<td><u style="cursor:pointer" class="text-primary" onclick="member_show('张三','member-show.html','10001','360','400')">{{$item->truename}}</u></td>--}}
                     <td>{{ $item->title }}</td>
-                    {{--<td>{{ $item->phone }}</td>--}}
-                    {{--<td>{{ $item->email }}</td>--}}
-                    {{--<td class="text-l">北京市 海淀区</td>--}}
-                    {{--<td>{{$item->created_at}}</td>--}}
-                    {{--<td class="td-status"><span class="label label-success radius">已启用</span></td>--}}
+                    <td>{{ $item->author }}</td>
+                    <td>{{ $item->created_at }}</td>
                     <td class="td-manage">
                         <a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;"
                            title="停用"><i class="Hui-iconfont">&#xe631;</i></a>

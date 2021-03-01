@@ -17,7 +17,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
     //  登陆处理
     Route::post('login','LoginController@login')->name('admin.login');
 
-    Route::resource('article','ArticleController',['names'=>['index'=>'admin.artcle.index']]);
+    Route::resource('article','ArticleController',['names'=>['index'=>'admin.artcle.index','create'=>'admin.article.create']]);
 
     // 文章管理路由
     Route::group(['middleware'=>['ckadmin']],function(){
