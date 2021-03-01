@@ -15,14 +15,9 @@
 //    return view('welcome');
 //});
 
-// 网站首页
-Route::get('/','Index\IndexController@index')->name('/');
 
-// 文章列表页
-Route::get('/article','Index\ArticleController@index')->name('index.article.index');
-
-
-Route::get('/article-show','Index\ArticleController@show')->name('index.article.show');
+// 前台路由
+include base_path('routes/index/index.php');
 
 // 后台路由
 include base_path('routes/admin/admin.php');

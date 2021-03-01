@@ -93,7 +93,7 @@
                                 <p>
                                     {{$hotArticle[1]->content}}
                                 </p>
-                                <a href="{{route('index.article.show',['id'=>$hotArticle[0]->id])}}" class="btn">
+                                <a href="{{route('index.article.show',['id'=>$hotArticle[1]->id])}}" class="btn">
                                     阅读更多
                                 </a>
                             </div>
