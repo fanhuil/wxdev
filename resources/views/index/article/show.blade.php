@@ -26,7 +26,7 @@
                             <span class="year fs-18">2018</span>
                         </div>
                         <div class="content artiledetail" style="border-bottom: 1px solid #e1e2e0; padding-bottom: 20px;">
-                            {{$article->content}}
+                            {!! $article->content !!}
                             <div class="copyright mt20">
                                 <p class="f-toe fc-black">
 {{--                                    非特殊说明，本文版权归 燕十三 所有，转载请注明出处.--}}

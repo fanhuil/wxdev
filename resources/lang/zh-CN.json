@@ -1,0 +1,19 @@
+{
+    "Dashboard": "控制台",
+    "Users": "用户",
+    "Roles":"角色管理",
+    "Permission": "权限管理",
+    "Menu": "菜单管理",
+    "Operation log": "操作日志",
+
+    "Title": "标题",
+    "Author": "作者",
+    "Seo title": "SEO标题",
+    "Seo keyword": "SEO标题",
+    "Seo description": "SEO描述",
+    "Is hot": "首页推荐",
+    "Created at": "创建时间",
+    "Updated at": "更新时间",
+    "Content": "内容"
+}
+

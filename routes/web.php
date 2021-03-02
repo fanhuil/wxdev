@@ -11,13 +11,17 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
+// 网站首页
+Route::get('/','Index\IndexController@index')->name('/');
 
 // 前台路由
 include base_path('routes/index/index.php');
 
 // 后台路由
-include base_path('routes/admin/admin.php');
+//include base_path('routes/admin/admin.php');
+
+
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});

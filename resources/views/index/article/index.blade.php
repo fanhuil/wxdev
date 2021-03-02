@@ -24,7 +24,7 @@
                         </div>
                         <div class="content">
                             <a href="read.html" class="cover img-light">
-                                <img src="index/image/cover/2019121192339714.png">
+                                <img src="{{asset('index')}}/image/cover/2019121192339714.png">
                             </a>
                             {{$item->content}}
                         </div>
