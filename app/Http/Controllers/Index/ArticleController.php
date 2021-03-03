@@ -11,19 +11,21 @@ class ArticleController extends Controller
     /**
      * 文章列表页
      */
-    public function index(){
+    public function index()
+    {
         $articleList = Article::all();
-        return view('index.article.index',compact('articleList'));
+        return view('index.article.index', compact('articleList'));
     }
 
     /**
      * 文章详情页
      */
-    public function show(Request $request){
-        $articleId = $request->input('id');
-        $article = Article::where('id',$articleId)->get();
+    public function show($id, Request $request)
+    {
+//        $articleId = $request->input($id);
+        $article = Article::where('id', $id)->get();
         $article = $article[0];
-        return view('index.article.show',compact('article'));
+        return view('index.article.show', compact('article'));
     }
 }
 

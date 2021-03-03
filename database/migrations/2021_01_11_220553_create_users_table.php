@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         /**
-         * 后台用户表
+         * 前台用户表
          */
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');

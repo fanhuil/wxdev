@@ -10,6 +10,7 @@ class IndexController extends Controller
     //
     public function index()
     {
+
         $hotArticle = Article::where('is_hot',1)->get();
         return view('index.index',compact('hotArticle'));
     }

@@ -2,9 +2,9 @@
 <html lang="zh-Hans-CN">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width"/>
     <title>首页</title>
     <link href="/index/layui/css/layui.css" rel="stylesheet" type="text/css">
     <link href="/index/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -20,10 +20,10 @@
 <div id="navgation" class="navgation navgation_close">
     <ul class="point">
         <li><a href="/">首页</a></li>
-        <li><a href="{{route('index.article.index')}}">博客</a></li>
-{{--        <li><a href="message.html">留言</a></li>--}}
+        <li><a href="{{route('index.article.index')}}">笔记</a></li>
+        {{--        <li><a href="message.html">留言</a></li>--}}
     </ul>
-    <div class="logo"><a>Mr.Yss</a></div>
+{{--    <div class="logo"><a>Mr.Yss</a></div>--}}
 </div>
 <div class="section" id="section1">
     <div class="fp-tablecell">
@@ -31,7 +31,7 @@
             <div class="nav wow zoomIn" data-wow-duration="2s">
                 <h1>好好学习，天天向上</h1>
                 <p>莫等闲，白了少年头，空悲切。</p>
-                <a class="layui-btn layui-btn-normal" style="margin-top: 20px" href="{{route('index.article.index')}}">Enter Blog</a>
+                <a class="layui-btn layui-btn-normal" style="margin-top: 20px" href="{{route('index.article.index')}}">Enter Note</a>
             </div>
             <a class="next wow fadeInUp" data-wow-duration="2s" id="next"></a>
         </div>
@@ -51,78 +51,33 @@
                     </div>
                 </div>
                 <div class="layui-row">
-                    <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" style="padding: 0 10px">
-                        <div class="single-news">
-                            <div class="news-head">
-                                <img src="index/image/1.jpg">
-                                <a href="{{route('index.article.show',['id'=>$hotArticle[0]->id])}}" class="link"><i class="fa fa-link"></i></a>
-                            </div>
-                            <div class="news-content">
-                                <h4>
-                                    <a href="{{route('index.article.show',['id'=>$hotArticle[0]->id])}}">
-                                        {{$hotArticle[0]->title}}
-                                    </a>
-                                </h4>
-                                <div class="date">
-                                    {{$hotArticle[0]->updated_at}}
+                    @foreach($hotArticle as $item)
+                        <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" style="padding: 0 10px">
+                            <div class="single-news">
+                                <div class="news-head">
+                                    <img src="index/image/1.jpg">
+                                    <a href="{{route('index.article.show',['id'=>$item->id])}}" class="link"><i
+                                            class="fa fa-link"></i></a>
                                 </div>
-                                <p>
-                                    {{$hotArticle[0]->content}}
-                                </p>
-                                <a href="{{route('index.article.show',['id'=>$hotArticle[0]->id])}}" class="btn">
-                                    阅读更多
-                                </a>
+                                <div class="news-content">
+                                    <h4>
+                                        <a href="{{route('index.article.show',['id'=>$item->id])}}">
+                                            {{$item->title}}
+                                        </a>
+                                    </h4>
+                                    <div class="date">
+                                        {{$item->updated_at}}
+                                    </div>
+                                    <p>
+                                        {{$item->content}}
+                                    </p>
+                                    <a href="{{route('index.article.show',['id'=>$item->id])}}" class="btn">
+                                        阅读更多
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".2s" style="padding: 0 10px">
-                        <div class="single-news">
-                            <div class="news-head">
-                                <img src="index/image/1.jpg">
-                                <a href="{{route('index.article.show',['id'=>$hotArticle[1]->id])}}" class="link"><i class="fa fa-link"></i></a>
-                            </div>
-                            <div class="news-content">
-                                <h4>
-                                    <a href="{{route('index.article.show',['id'=>$hotArticle[1]->id])}}">
-                                        {{$hotArticle[1]->title}}
-                                    </a>
-                                </h4>
-                                <div class="date">
-                                    {{$hotArticle[1]->updated_at}}
-                                </div>
-                                <p>
-                                    {{$hotArticle[1]->content}}
-                                </p>
-                                <a href="{{route('index.article.show',['id'=>$hotArticle[1]->id])}}" class="btn">
-                                    阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="layui-col-xs12 layui-col-sm4 layui-col-md4  wow fadeInUp" data-wow-delay=".4s" style="padding: 0 10px">
-                        <div class="single-news">
-                            <div class="news-head">
-                                <img src="index/image/1.jpg">
-                                <a href="{{route('index.article.show',['id'=>$hotArticle[2]->id])}}" class="link"><i class="fa fa-link"></i></a>
-                            </div>
-                            <div class="news-content">
-                                <h4>
-                                    <a href="{{route('index.article.show',['id'=>$hotArticle[2]->id])}}">
-                                        {{$hotArticle[2]->title}}
-                                    </a>
-                                </h4>
-                                <div class="date">
-                                    {{$hotArticle[2]->updated_at}}
-                                </div>
-                                <p>
-                                    {{$hotArticle[2]->content}}
-                                </p>
-                                <a href="{{route('index.article.show',['id'=>$hotArticle[2]->id])}}" class="btn">
-                                    阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -193,9 +148,9 @@
                     <div class="single-widget contact">
                         {{--<h2>联系我</h2>--}}
                         {{--<ul class="list">--}}
-                            {{--<li><i class="fa fa-map"></i>地址: 四川成都金牛区金科北路39号</li>--}}
-                            {{--<li><i class="fa fa-qq"></i>QQ: 930054439 </li>--}}
-                            {{--<li><i class="fa fa-envelope"></i>邮箱: 930054439@qq.com</li>--}}
+                        {{--<li><i class="fa fa-map"></i>地址: 四川成都金牛区金科北路39号</li>--}}
+                        {{--<li><i class="fa fa-qq"></i>QQ: 930054439 </li>--}}
+                        {{--<li><i class="fa fa-envelope"></i>邮箱: 930054439@qq.com</li>--}}
                         {{--</ul>--}}
                     </div>
                 </div>
@@ -206,7 +161,8 @@
         <div class="container">
             <div class="layui-row">
                 <div class="layui-col-xs12 layui-col-sm12 layui-col-md12 text-center">
-                    <p><a href="https://beian.miit.gov.cn" style="color:white;">Copyright &copy; 2021-2021 All Rights Reserved V.3.1.3 桂ICP备19011879-1号</a></p>
+                    <p><a href="https://beian.miit.gov.cn" style="color:white;">Copyright &copy; 2021-2021 All Rights
+                            Reserved V.3.1.3 桂ICP备19011879-1号</a></p>
                 </div>
             </div>
         </div>

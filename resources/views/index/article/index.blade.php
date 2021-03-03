@@ -26,7 +26,7 @@
                             <a href="read.html" class="cover img-light">
                                 <img src="{{asset('index')}}/image/cover/2019121192339714.png">
                             </a>
-                            {{$item->content}}
+                            {!! $item->content !!}
                         </div>
                         <div class="read-more">
                             <a href="read.html" class="fc-black f-fwb">继续阅读</a>
