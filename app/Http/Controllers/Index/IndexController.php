@@ -11,9 +11,9 @@ class IndexController extends Controller
     //
     public function index(Request $request)
     {
-        $string = $request->ip();
-        file_put_contents('ip.html', $string . "-", FILE_APPEND);
-        return $string;
+//        $string = $request->ip();
+//        file_put_contents('ip.html', $string . "-", FILE_APPEND);
+//        return $string;
         $hotArticle = Article::where('is_hot', 1)->get();
         return view('index.index', compact('hotArticle'));
 

@@ -24,7 +24,6 @@ class UserController extends BaseController
     // 用户添加逻辑
     public function store(Request $request)
     {
-        dd($request->all());
         $data = $this->validate(
             $request,
             [

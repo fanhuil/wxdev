@@ -49,10 +49,8 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 | and wonderful application we have prepared for them.
 |
 */
-// App\Http\Kernel
+// 绑定了App\Http\Kernel
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-dd($kernel);
-
 
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
