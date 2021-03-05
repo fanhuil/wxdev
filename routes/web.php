@@ -18,7 +18,7 @@ Route::get('/','Index\IndexController@index')->name('/');
 include base_path('routes/index/index.php');
 
 // 后台路由
-//include base_path('routes/admin/admin.php');
+include base_path('routes/admin/admin.php');
 
 
 

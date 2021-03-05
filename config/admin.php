@@ -58,7 +58,7 @@ return [
     */
     'route' => [
 
-        'prefix' => env('ADMIN_ROUTE_PREFIX', 'admin'),
+        'prefix' => env('ADMIN_ROUTE_PREFIX', 'laradmin'),
 
         'namespace' => 'App\\Admin\\Controllers',
 
@@ -85,7 +85,7 @@ return [
     | Html title for all pages.
     |
     */
-    'title' => 'Admin',
+    'title' => '笔记后台',
 
     /*
     |--------------------------------------------------------------------------
@@ -400,7 +400,7 @@ return [
             'enable' => true,
             // 编辑器的前端配置 参考：http://fex.baidu.com/ueditor/#start-config
             'config' => [
-                'initialFrameHeight' => 400, // 例如初始化高度
+                'initialFrameHeight' => 800, // 例如初始化高度
             ],
             // 'field_type' => 'editor'
         ]

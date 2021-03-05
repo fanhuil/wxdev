@@ -69,7 +69,7 @@
                                         {{$item->updated_at}}
                                     </div>
                                     <p>
-                                        {{$item->content}}
+                                        {!! $item->content !!}
                                     </p>
                                     <a href="{{route('index.article.show',['id'=>$item->id])}}" class="btn">
                                         阅读更多
