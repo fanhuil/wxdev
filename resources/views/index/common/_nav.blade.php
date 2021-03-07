@@ -12,9 +12,9 @@
                     {{--<li><a href="link.html">友链</a></li>--}}
                 </ul>
             </nav>
-            <a href="/User/QQLogin" class="blog-user">
-                <i class="fa fa-qq"></i>
-            </a>
+            {{--<a href="/User/QQLogin" class="blog-user">--}}
+                {{--<i class="fa fa-qq"></i>--}}
+            {{--</a>--}}
             <a class="phone-menu">
                 <i></i>
                 <i></i>

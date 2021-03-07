@@ -14,11 +14,16 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articleList = Article::all();
+        $articleList = Article::where('deleted_at','=',null)->orderBy('is_top','desc')->get();
 
         $categoryList = Category::all();
 
-        return view('index.article.index', compact('articleList','categoryList'));
+        $hotArticle = Article::where([
+            ['is_hot','=',1],
+            ['deleted_at','=',null],
+        ])->get();
+
+        return view('index.article.index', compact('articleList','categoryList','hotArticle'));
     }
 
     /**

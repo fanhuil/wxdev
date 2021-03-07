@@ -116,6 +116,9 @@ class ArticleController extends AdminController
 
         $form->UEditor('content', __('Content'))->rules('required');
         $form->radio('is_hot', __('Is hot'))->options([1 => '是',0 => '否'])->default('0');
+        $form->radio('is_top', __('Is top'))->options([1 => '是',0 => '否'])->default('0');
+        $form->radio('is_original', __('Is original'))->options([1 => '是',0 => '否'])->default('0');
+
         return $form;
     }
 }
