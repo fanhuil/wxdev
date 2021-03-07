@@ -7,7 +7,7 @@
             <nav class="nav" id="nav">
                 <ul>
                     <li><a href="{{route('/')}}">首页</a></li>
-                    <li><a href="{{route('index.article.index')}}">笔记</a></li>
+                    {{--<li><a href="{{route('index.article.index')}}">笔记</a></li>--}}
                     {{--<li><a href="message.html">留言</a></li>--}}
                     {{--<li><a href="link.html">友链</a></li>--}}
                 </ul>

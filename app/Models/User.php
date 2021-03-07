@@ -13,4 +13,7 @@ class User extends AuthUser
 
     //  隐藏字段
     protected $hidden = ['password'];
+
+
+
 }

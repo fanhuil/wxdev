@@ -12,7 +12,7 @@
 */
 
 // 网站首页
-Route::get('/','Index\IndexController@index')->name('/');
+Route::get('/','Index\ArticleController@index')->name('/');
 
 // 前台路由
 include base_path('routes/index/index.php');

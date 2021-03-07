@@ -21,9 +21,7 @@
     <ul class="point">
         <li><a href="/">首页</a></li>
         <li><a href="{{route('index.article.index')}}">笔记</a></li>
-        {{--        <li><a href="message.html">留言</a></li>--}}
     </ul>
-{{--    <div class="logo"><a>Mr.Yss</a></div>--}}
 </div>
 <div class="section" id="section1">
     <div class="fp-tablecell">
@@ -46,7 +44,7 @@
                         <h1>热门文章</h1>
                         <p>
                             很想给你写封信,告诉你这里的天气.
-                            <br>昨夜的那场电影,还有我的心情.222
+                            <br>昨夜的那场电影,还有我的心情.
                         </p>
                     </div>
                 </div>

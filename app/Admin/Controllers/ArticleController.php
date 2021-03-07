@@ -2,12 +2,16 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Post\Delete;
+use App\Admin\Actions\Post\HardDelete;
 use App\Models\Article;
+use App\Models\Category;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use App\Admin\Actions\Post\Restore;
+use App\Admin\Actions\Post\Replicate;
 
 class ArticleController extends AdminController
 {
@@ -26,20 +30,23 @@ class ArticleController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Article());
-        $grid->column('id', __('Id'))->sortable()->help('文章id');
-        $grid->column('title', __('Title'));
-        $grid->column('author', __('Author'));
-        $grid->column('seo_title', __('Seo title'));
-        $grid->column('seo_keyword', __('Seo keyword'));
-        $grid->column('seo_description', __('Seo description'));
-        $grid->column('is_hot', __('Is hot'), '热门?')->display(function ($is_hot) {
+        $grid->column('id', __('Id'))->sortable()->help('文章id')->style('text-align:center');
+        $grid->column('title', __('Title'))->style('text-align:center');
+        $grid->column('author', __('Author'))->style('text-align:center');
+        //$grid->column('seo_title', __('Seo title'));
+        //$grid->column('seo_keyword', __('Seo keyword'));
+        //$grid->column('seo_description', __('Seo description'));
+        $grid->column('is_hot', __('Is hot'))->display(function ($is_hot) {
             return $is_hot ? '是' : '否';
-        });
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        })->style('text-align:center');
+        $grid->column('created_at', __('Created at'))->style('text-align:center');
+        $grid->column('updated_at', __('Updated at'))->style('text-align:center');
         $grid->quickSearch(function ($model,$query){
             $model->where('id', $query)->orWhere('title', 'like', "%{$query}%")->orWhere('author',$query);
         });
+        $grid->column('category.category_name',__('Category category name'))->style('text-align:center');
+        //$grid->category()->category_name()->style('text-align:center');
+
         $grid->filter(function ($filter) {
             // 回收站
             $filter->scope('trashed', '回收站')->onlyTrashed();
@@ -48,8 +55,12 @@ class ArticleController extends AdminController
         });
 
         $grid->actions(function ($actions) {
+            // 回收站的操作
             if (\request('_scope_') == 'trashed') {
+                // 去掉删除
+                $actions->disableDelete();
                 $actions->add(new Restore());
+                $actions->add(new HardDelete());
             }
         });
 
@@ -93,6 +104,16 @@ class ArticleController extends AdminController
         $form->text('seo_title', __('Seo title'));
         $form->text('seo_keyword', __('Seo keyword'));
         $form->text('seo_description', __('Seo description'));
+
+        // 关联文章分类模型
+        $form1 = new Form(new Category());
+        $category = $form1->model()::all();
+        $categoryList = [];
+        foreach ($category as $cate){
+            $categoryList[$cate->id] = $cate->category_name;
+        }
+        $form->select('categoryid')->options($categoryList);
+
         $form->UEditor('content', __('Content'))->rules('required');
         $form->radio('is_hot', __('Is hot'))->options([1 => '是',0 => '否'])->default('0');
         return $form;

@@ -1,5 +1,6 @@
 {
     "Dashboard": "控制台",
+    "Admin":"后台管理",
     "Users": "用户",
     "Roles":"角色管理",
     "Permission": "权限管理",
@@ -14,6 +15,9 @@
     "Is hot": "首页推荐",
     "Created at": "创建时间",
     "Updated at": "更新时间",
-    "Content": "内容"
+    "Content": "内容",
+    "Category category name":"文章分类",
+
+    "All permission":"所有权限"
 }
 

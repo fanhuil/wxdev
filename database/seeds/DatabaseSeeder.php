@@ -15,5 +15,7 @@ class DatabaseSeeder extends Seeder
          $this->call(UserSeeder::class);
          // 调用生成文章表
          $this->call(ArticleSeeder::class);
+         // laravel-admin种子文件生成
+        $this->call(Encore\Admin\Auth\Database\AdminTablesSeeder::class);
     }
 }

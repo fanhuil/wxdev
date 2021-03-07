@@ -19,6 +19,9 @@ Route::group([
     // 文章管理
     $router->resource('articles', ArticleController::class);
 
+    // 分账分类管理
+    $router->resource('category',CategoryController::class);
+
 });
 
 

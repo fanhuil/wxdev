@@ -10,4 +10,8 @@ class Article extends Model
     use SoftDeletes;
     protected $table = 'article';
 
+    public function category(){
+        return $this->hasOne(Category::class,'id','categoryid');
+    }
+
 }
