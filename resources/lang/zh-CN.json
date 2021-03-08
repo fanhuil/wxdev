@@ -10,7 +10,7 @@
     "Title": "标题",
     "Author": "作者",
     "Seo title": "SEO标题",
-    "Seo keyword": "SEO标题",
+    "Seo keyword": "SEO关键词",
     "Seo description": "SEO描述",
     "Is hot": "首页推荐",
     "Is top":"文章置顶",
@@ -19,6 +19,7 @@
     "Updated at": "更新时间",
     "Content": "内容",
     "Category category name":"文章分类",
+    "Catename":"文章分类",
 
     "All permission":"所有权限"
 }

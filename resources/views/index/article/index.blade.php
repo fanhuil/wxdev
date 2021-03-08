@@ -40,7 +40,7 @@
                                 @endphp
                             </span>
                         </div>
-                        <div class="content">
+                        <div class="content" style="height: 112px;overflow: hidden;">
                             {{--<a href="read.html" class="cover img-light">--}}
                                 {{--<img src="{{asset('index')}}/image/cover/2019121192339714.png">--}}
                             {{--</a>--}}
@@ -166,7 +166,6 @@
 <script src="/index/js/plugins/nprogress.js"></script>
 <script>NProgress.start();</script>
 <script src="/index/js/yss/article.js"></script>
-
 <script>
     window.onload = function () {
         NProgress.done();

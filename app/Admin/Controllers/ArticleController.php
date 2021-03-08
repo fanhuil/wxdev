@@ -98,11 +98,17 @@ class ArticleController extends AdminController
      */
     protected function form()
     {
+        // 实例化文章控制类
         $form = new Form(new Article());
+        // 文章标题
         $form->text('title', __('Title'))->rules('required|min:3');
+        // 文章作者
         $form->text('author', __('Author'));
+        // SEO标题
         $form->text('seo_title', __('Seo title'));
+        // SEO关键词
         $form->text('seo_keyword', __('Seo keyword'));
+        // SEO描述
         $form->text('seo_description', __('Seo description'));
 
         // 关联文章分类模型
@@ -112,13 +118,17 @@ class ArticleController extends AdminController
         foreach ($category as $cate){
             $categoryList[$cate->id] = $cate->category_name;
         }
-        $form->select('categoryid')->options($categoryList);
+        $form->select('categoryid',__('Catename'))->options($categoryList)->rules('required');
 
+        // 文章内容(百度富文本编辑器)
         $form->UEditor('content', __('Content'))->rules('required');
+        // 推荐
         $form->radio('is_hot', __('Is hot'))->options([1 => '是',0 => '否'])->default('0');
+        // 置顶
         $form->radio('is_top', __('Is top'))->options([1 => '是',0 => '否'])->default('0');
+        // 原创
         $form->radio('is_original', __('Is original'))->options([1 => '是',0 => '否'])->default('0');
-
+        // 表单内容
         return $form;
     }
 }
