@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 /**
  * 文章管理类控制器
@@ -19,8 +20,21 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        /usr/local/redis/src
+        // DB门面查询数据
+         /*$articleList = DB::table('article')->where([
+                 ['deleted_at', '=', null],
+                 ['is_top', '=', 1]
+             ])->leftJoin('category','article.categoryid','=','category.id')->get();
+         dd($articleList);*/
+        // foreach ($articleList as $item) {
+        // dump($item->title);
+        // }
+
         // 文章列表
-        $articleList = Article::where('deleted_at', '=', null)->orderBy('is_top', 'desc')->get();
+        $articleList = Article::where([
+            ['deleted_at', '=', null]
+        ])->orderBy('is_top', 'desc')->get();
 
         // 文章分类列表
         $categoryList = Category::all();

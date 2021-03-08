@@ -54,7 +54,7 @@ class CategoryController extends AdminController
     protected function form()
     {
         $form = new Form(new Category());
-        $form->text('category_name');
+        $form->text('category_name',__('Category name'));
 
 
         return $form;
